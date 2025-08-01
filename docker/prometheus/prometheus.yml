@@ -4,5 +4,5 @@ global:
 scrape_configs:
   - job_name: "temperature_exporter"
     static_configs:
-      - targets: ["localhost:9100"]
+      - targets: ["10.0.2.4:9100"]
 
