@@ -1,10 +1,10 @@
-# 🌡️ Azure Temperature Monitoring with Prometheus, Grafana & Python Exporter
+# Azure Temperature Monitoring with Prometheus, Grafana & Python Exporter
 
 This project builds an end-to-end monitoring solution that tracks **real-time temperature in Tallinn** using a custom Python exporter. The entire stack is deployed on an **Azure VM** with infrastructure provisioned by **Terraform**, and services managed with **Docker Compose**.
 
 ---
 
-## 📦 What’s Included
+## What’s Included
 
 | Layer            | Technology                     | Purpose                                 |
 |------------------|---------------------------------|-----------------------------------------|
@@ -14,7 +14,7 @@ This project builds an end-to-end monitoring solution that tracks **real-time te
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 azure-temp-monitoring/
@@ -32,9 +32,9 @@ azure-temp-monitoring/
 
 ---
 
-## 🚀 Deployment Guide
+## Deployment Guide
 
-### 1. 🧱 Provision Infrastructure (Local Machine)
+### 1. Provision Infrastructure (Local Machine)
 ```bash
 cd terraform/
 terraform init
@@ -44,14 +44,14 @@ This creates an Ubuntu 22.04 VM with public IP, NSG, and other dependencies.
 
 ---
 
-### 2. 🔐 SSH into Azure VM
+### 2. SSH into Azure VM
 ```bash
 ssh azureuser@<your-public-ip>
 ```
 
 ---
 
-### 3. 🐳 Start Monitoring Stack
+### 3. Start Monitoring Stack
 ```bash
 cd azure-temp-monitoring/docker
 docker-compose up -d
@@ -59,7 +59,7 @@ docker-compose up -d
 
 ---
 
-### 4. 🐍 Run the Flask Exporter
+### 4. Run the Flask Exporter
 ```bash
 cd ../scripts
 nohup python3 fetch_temperature.py &
@@ -77,7 +77,7 @@ temperature_celsius{location="Tallinn"} 18.0
 
 ---
 
-## 📊 Grafana Setup
+## Grafana Setup
 
 1. Visit Grafana at:  
    `http://<your-vm-ip>:3000` (admin/admin)
@@ -92,7 +92,7 @@ temperature_celsius{location="Tallinn"} 18.0
 
 ---
 
-## 🐍 Python Exporter Details
+## Python Exporter Details
 
 `fetch_temperature.py` does the following:
 - Calls: `https://wttr.in/Tallinn?format=j1`
@@ -109,7 +109,7 @@ temperature_celsius{location="Tallinn"} 17.5
 
 ---
 
-## 🧹 Tear Down
+## Tear Down
 
 To remove all resources:
 ```bash
@@ -126,26 +126,7 @@ sudo pkill -f fetch_temperature.py  # Kill Flask exporter
 ```
 
 ---
+<img width="1440" height="841" alt="Screenshot 2025-08-01 at 9 43 22 PM" src="https://github.com/user-attachments/assets/bacc85ed-cf4a-4988-b83a-a485c9dba22d" />
+<img width="1440" height="858" alt="Screenshot 2025-08-01 at 10 25 01 PM" src="https://github.com/user-attachments/assets/354427e6-243d-4e42-8d0f-6be14b30a0f1" />
+<img width="1440" height="811" alt="Screenshot 2025-08-01 at 10 26 57 PM" src="https://github.com/user-attachments/assets/6ddcf846-9af3-4eef-9f70-654e5e368a93" />
 
-## 🔐 Notes
-
-- The Flask server is for demo purposes. Use a production WSGI server like Gunicorn for real deployments.
-- `wttr.in` is free but may be rate-limited; for reliability, consider Open-Meteo or other APIs.
-
----
-
-## 📎 GitHub Repo
-
-🔗 [github.com/AT1704/azure-temp-monitoring](https://github.com/AT1704/azure-temp-monitoring)
-
----
-
-## 🙋‍♂️ Author
- 
-DevOps | Cloud | Monitoring | Automation
-
----
-
-## 📝 License
-
-MIT – Use freely for personal or educational purposes.
