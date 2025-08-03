@@ -100,7 +100,7 @@ temperature_celsius{location="Tallinn"} 18.0
 
 Example output:
 ```
-temperature_celsius{location="Tallinn"} 17.5
+temperature_celsius{location="Tallinn"} 21
 ```
 
 > You can test locally with:  
@@ -125,7 +125,7 @@ sudo pkill -f fetch_temperature.py  # Kill Flask exporter
 ```
 
 ---
-<img width="1440" height="841" alt="Screenshot 2025-08-01 at 9 43 22 PM" src="https://github.com/user-attachments/assets/bacc85ed-cf4a-4988-b83a-a485c9dba22d" />
+<img width="1440" height="858" alt="Screenshot 2025-08-01 at 10 26 04 PM" src="https://github.com/user-attachments/assets/975c7e8d-586c-4d48-a230-e339c97e694b" />
 <img width="1440" height="858" alt="Screenshot 2025-08-01 at 10 25 01 PM" src="https://github.com/user-attachments/assets/354427e6-243d-4e42-8d0f-6be14b30a0f1" />
 <img width="1440" height="811" alt="Screenshot 2025-08-01 at 10 26 57 PM" src="https://github.com/user-attachments/assets/6ddcf846-9af3-4eef-9f70-654e5e368a93" />
 
