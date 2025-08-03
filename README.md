@@ -26,8 +26,7 @@ azure-temp-monitoring/
 │       └── prometheus.yml
 ├── scripts/                    # Python Flask app exporter
 │   ├── fetch_temperature.py
-│   └── README.md               # (Exporter-specific doc)
-└── PROJECT_OVERVIEW.md         # (This file)
+└── README.md     
 ```
 
 ---
